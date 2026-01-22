@@ -1,0 +1,124 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3625,        114]
+NotebookOptionsPosition[      3255,         99]
+NotebookOutlinePosition[      3672,        116]
+CellTagsIndexPosition[      3629,        113]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"phiRange", "=", 
+    RowBox[{"Range", "[", 
+     RowBox[{"0.", ",", "1", ",", "0.001"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"inverseFunction", "[", 
+     RowBox[{
+      RowBox[{"phi_", "?", "NumericQ"}], ",", 
+      RowBox[{"n_", "?", "NumericQ"}], ",", 
+      RowBox[{"chi_", "?", "NumericQ"}]}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "result", "}"}], ",", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"phi", "\[Equal]", "0"}], "||", 
+          RowBox[{"phi", "\[Equal]", "1"}]}], ",", 
+         RowBox[{"Return", "[", 
+          RowBox[{"{", "}"}], "]"}]}], "]"}], ";", 
+       RowBox[{"result", "=", 
+        RowBox[{"2", "*", 
+         RowBox[{"(", 
+          RowBox[{"chi", "-", 
+           RowBox[{"(", 
+            RowBox[{
+             FractionBox["1", "2"], 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "n"}], "-", "phi", "+", 
+                 RowBox[{"n", " ", "phi"}]}], ")"}], "/", 
+               RowBox[{"(", 
+                RowBox[{"n", " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "phi"}], ")"}], " ", "phi"}], 
+                ")"}]}], ")"}]}], ")"}]}], ")"}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"result", "\[GreaterEqual]", "0"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"phi", ",", "result"}], "}"}], ",", 
+         RowBox[{"{", "}"}]}], "]"}]}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetAttributes", "[", 
+    RowBox[{"inverseFunction", ",", "Listable"}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"results", "=", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"inverseFunction", "[", 
+       RowBox[{"phiRange", ",", "129.73", ",", "1.4"}], "]"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", "#", "]"}], "\[Equal]", "2"}], "&"}]}], 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"phiValues", ",", "kValues"}], "}"}], "=", 
+   RowBox[{"Transpose", "[", "results", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MatrixForm", "[", 
+  RowBox[{"Transpose", "[", "results", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.978039637507782*^9, 3.9780396576402683`*^9}},
+ CellLabel->"",ExpressionUUID->"84cffc93-d85a-0349-a6a6-306ee9d0fad9"]
+},
+WindowSize->{760.5, 729.75},
+WindowMargins->{{66, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (2023\:5e7412\:670812\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"4fb3f576-ee82-8245-9c7f-5fdbd36d67f6"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2693, 77, 421, "Input",ExpressionUUID->"84cffc93-d85a-0349-a6a6-306ee9d0fad9"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
